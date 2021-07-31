@@ -19,3 +19,24 @@ body {
 .disable {
   display: none;
 }
+
+
+.log-list {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.log-item:nth-child(n + 2) {
+  margin-top: 20px;
+}
+
+.log-date,
+.server-name-text,
+.server-info-text,
+.block-information {
+  font-size: 14px;
+}
+
+.log-date {
+  margin-bottom: 5px;
+}
