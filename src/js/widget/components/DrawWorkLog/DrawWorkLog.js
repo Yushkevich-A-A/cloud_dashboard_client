@@ -1,4 +1,7 @@
-import moment from "moment";
+import moment from 'moment';
+import 'moment/locale/ru';
+
+moment().local('ru');
 
 export default class DrawWorkLog {
     constructor(wrapper) {
@@ -20,25 +23,16 @@ export default class DrawWorkLog {
         this.logList = this.worklog.querySelector('.log-list');
     }
 
-    drawLogList(data) {
-        this.logList.textContent = '';
-        for (let i of data) {
-            this.drawLog(i);
-        }
-    }
-
     drawLog(data) {
         const li = document.createElement('li');
         li.classList.add('log-item');
-        li.innerHTML = `<div class="log-date">
-        18:50:01 20.03.19
-    </div>
+        li.innerHTML = `<div class="log-date"></div>
     <div class="log-information">
         <div class="block-information server-name-information">
-            Server: <span class="server-name-text">wdfgsdrgrr-dfvsdfb-dbsfbsds-sdfbsdfd</span>
+            Server: <span class="server-name-text"></span>
         </div>
         <div class="block-information server-information">
-            INFO: <span class="server-info-text">Created</span>
+            INFO: <span class="server-info-text"></span>
         </div>
     </div>`
         this.logList.appendChild(li);
@@ -46,8 +40,8 @@ export default class DrawWorkLog {
         const date = li.querySelector('.log-date');
         date.textContent = moment(data.date).format('HH:mm:ss DD.MM.YYYY');
         const serverName = li.querySelector('.server-name-text');
-        serverName.textContent = data.serverName;
+        serverName.textContent = data.id;
         const serverInfo = li.querySelector('.server-info-text');
-        serverInfo.textContent = data.serverInfo;
+        serverInfo.textContent = data.text;
     }
 }

@@ -21,13 +21,13 @@
     height: 100%;
   }
   
-  .inctance-item-block {
+  .instance-item-block {
     border: 1px solid #818181;
     border-radius: 10px;
     padding: 10px;
   }
   
-  .inctance-item-block:nth-child(n + 2) {
+  .instance-item-block:nth-child(n + 2) {
     margin-top: 10px;
   }
   
@@ -59,7 +59,7 @@
     border-radius: 50%;
   }
   
-  .ranning::before {
+  .running::before {
     background-color: rgb(0, 255, 0);
   }
   

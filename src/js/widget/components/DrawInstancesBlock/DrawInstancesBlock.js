@@ -25,13 +25,14 @@ export default class DrawInstancesBlock {
     drawInstance(data) {
         this.instancesList.textContent = '';
         for(let i of data){
-        this.instance(data);
+        this.instance(i);
         }
     }
 
     instance(data) {
+
         const li = document.createElement('li');
-        li.classList.add('inctance-item-block');
+        li.classList.add('instance-item-block');
         li.innerHTML = `<div class="block-instance-title">
                     <h3 class='instance-title'>12413512352-csqef-asdcv-sdfvsdfa</h3>
                 </div>
@@ -60,10 +61,10 @@ export default class DrawInstancesBlock {
         const nameServer = li.querySelector('.instance-title');
         nameServer.textContent = data.id;
 
-        if (data.status = 'stopped') {
+        if (data.state === 'stopped') {
             this.stopped(li);
-        } else if (data.status = 'running') {
-            this.started(element);
+        } else if (data.state === 'running') {
+            this.started(li);
         }
     }
 
@@ -73,7 +74,7 @@ export default class DrawInstancesBlock {
         statusTextBlock.classList.add('running');
 
         const statusText = element.querySelector('.status-text');
-        statusText.textContent = 'running';
+        statusText.textContent = 'Running';
 
         const runButton = element.querySelector('.run-button');
         runButton.classList.remove('start');

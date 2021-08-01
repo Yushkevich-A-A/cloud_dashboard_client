@@ -1,8 +1,4 @@
-.log-list {
-    height: 100%;
-    overflow-y: scroll;
-  }
-  
+
   .log-item:nth-child(n + 2) {
     margin-top: 20px;
   }
