@@ -22,6 +22,8 @@
         "no-plusplus": "off",
         "no-new": "off",
         "import/no-extraneous-dependencies": "off",
-        "consistent-return": "off"
+        "consistent-return": "off",
+        "import/no-unresolved": "off",
+        "class-methods-use-this": "off"
     }
 }

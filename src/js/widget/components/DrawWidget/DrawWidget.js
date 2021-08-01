@@ -1,12 +1,11 @@
 export default class Widget {
-    constructor() {
-        this.init();
-    }
+  constructor() {
+    this.init();
+  }
 
-    init() {
-        this.wrapper = document.createElement('div');
-        this.wrapper.classList.add('widget-wrapper');
-        document.body.appendChild(this.wrapper);
-    }
+  init() {
+    this.wrapper = document.createElement('div');
+    this.wrapper.classList.add('widget-wrapper');
+    document.body.appendChild(this.wrapper);
+  }
 }
-
