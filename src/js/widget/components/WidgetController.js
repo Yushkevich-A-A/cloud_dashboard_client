@@ -1,4 +1,4 @@
-export default class Controller {
+export default class WidgetController {
     constructor(instances, workLog) {
         this.instances = instances;
         this.workLog = workLog;
@@ -6,8 +6,6 @@ export default class Controller {
     }
 
     init() {
-        console.log(33)
-        console.log(5555555555555555555555555555555)
         this.initInstancesBlock()
         this.workLog.drawWorkLog();
         this.listeners();
@@ -34,7 +32,6 @@ export default class Controller {
     // }
 
     async initInstancesBlock() {
-        console.log(5555555555555555555555555555555)
         this.instances.drawInstancesBlock();
         const response = await fetch('http://192.168.1.57:7070/instances',);
 
@@ -44,7 +41,6 @@ export default class Controller {
                 return;
             }
             this.instances.drawInstance(json);
-            console.log(5555555555555555555555555555555)
         }
     }
 
