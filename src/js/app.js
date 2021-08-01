@@ -1,7 +1,7 @@
 // css
-import './Widget/Components/DrawInstancesBlock/DrawInstancesBlock.css';
-import './Widget/Components/DrawWidget/DrawWidget.css';
-import './Widget/Components/DrawWorkLog/DrawWorkLog.css';
+import './widget/components/DrawInstancesBlock/DrawInstancesBlock.css';
+import './widget/components/DrawWidget/DrawWidget.css';
+import './widget/components/DrawWorkLog/DrawWorkLog.css';
 
 // js
-import './Widget/Widget';
+import './widget/Widget';
