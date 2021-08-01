@@ -15,7 +15,7 @@ export default class WidgetController {
     document.addEventListener('click', async (event) => {
       event.preventDefault();
       if (event.target.closest('.block-create-instance')) {
-        const response = await fetch('http://192.168.1.57:7070/instances', {
+        const response = await fetch('https://yushkevich-cloud-dashboard.herokuapp.com/instances', {
           method: 'POST',
         });
 
@@ -27,7 +27,7 @@ export default class WidgetController {
 
       if (event.target.closest('.start')) {
         const instanceBlock = event.target.closest('.instance-item-block');
-        const response = await fetch(`http://192.168.1.57:7070/instances/${instanceBlock.dataset.id}/running`, {
+        const response = await fetch(`https://yushkevich-cloud-dashboard.herokuapp.com/instances/${instanceBlock.dataset.id}/running`, {
           method: 'PUT',
         });
 
@@ -39,7 +39,7 @@ export default class WidgetController {
 
       if (event.target.closest('.pause')) {
         const instanceBlock = event.target.closest('.instance-item-block');
-        const response = await fetch(`http://192.168.1.57:7070/instances/${instanceBlock.dataset.id}/stopped`, {
+        const response = await fetch(`https://yushkevich-cloud-dashboard.herokuapp.com/instances/${instanceBlock.dataset.id}/stopped`, {
           method: 'PUT',
         });
 
@@ -51,7 +51,7 @@ export default class WidgetController {
 
       if (event.target.closest('.delete-button')) {
         const instanceBlock = event.target.closest('.instance-item-block');
-        const response = await fetch(`http://192.168.1.57:7070/instances/${instanceBlock.dataset.id}`, {
+        const response = await fetch(`https://yushkevich-cloud-dashboard.herokuapp.com/instances/${instanceBlock.dataset.id}`, {
           method: 'DELETE',
         });
 
@@ -69,7 +69,7 @@ export default class WidgetController {
 
   async initInstancesBlock() {
     this.instances.drawInstancesBlock();
-    const response = await fetch('http://192.168.1.57:7070/instances');
+    const response = await fetch('https://yushkevich-cloud-dashboard.herokuapp.com/instances');
     if (response.ok) {
       const json = await response.json();
       if (json.length === 0) {
@@ -81,7 +81,7 @@ export default class WidgetController {
   }
 
   eventSource() {
-    const eventSource = new EventSource('http://192.168.1.57:7070/sse');
+    const eventSource = new EventSource('https://yushkevich-cloud-dashboard.herokuapp.com/sse');
     eventSource.addEventListener('message', (event) => {
       const item = JSON.parse(event.data);
       this.workLog.drawLog(item.log);
