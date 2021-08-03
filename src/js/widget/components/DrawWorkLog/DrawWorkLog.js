@@ -43,5 +43,7 @@ export default class DrawWorkLog {
     serverName.textContent = data.id;
     const serverInfo = li.querySelector('.server-info-text');
     serverInfo.textContent = data.text;
+
+    this.logList.scrollTop = this.logList.scrollHeight;
   }
 }
