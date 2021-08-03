@@ -6,12 +6,5 @@
     left: 0;
     display: flex;
     justify-content: center;
-  }
-
-  .widget-block {
-    height: 600px;
-  }
-
-  .content-block {
-    overflow-y: scroll;
+    align-items: flex-start;
   }

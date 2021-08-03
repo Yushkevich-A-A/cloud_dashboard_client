@@ -16,9 +16,14 @@
     margin-bottom: 25px;
   }
   
-  .content-block {
-    max-height: 500px;
+  .widget-block {
+    max-height: 600px;
     height: 100%;
+  }
+
+  .instances-list {
+    max-height: 400px;
+    overflow-y: scroll;
   }
   
   .instance-item-block {
